@@ -1,6 +1,9 @@
 <h1 align="center">Hi 👋, I'm Görkem</h1>
 <h3 align="center">I'm improving myself in coding.</h3>
 
+
+- 🔭 I’m currently working on Next.Js
+
 - 🌱 I’m currently learning **Node.Js**
 
 - 👨‍💻 All of my projects are available at [https://linktr.ee/gorkemyagci](https://linktr.ee/gorkemyagci)
