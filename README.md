@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Görkem Yağcı</h1>
+<h1 align="center">Hi 👋, I'm Görkem</h1>
 <h3 align="center">Hi, I'm Görkem. I'm improving myself in coding.</h3>
 
 - 🌱 I’m currently learning **Node.Js**
