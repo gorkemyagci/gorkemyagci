@@ -5,8 +5,6 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=gorkemyagci" alt="gorkemyagci" /></a> </p>
 
-- 🔭 I’m currently working on [Seonly](seonly.io)
-
 - 🌱 I’m currently learning **Node.Js**
 
 - 👨‍💻 All of my projects are available at [https://linktr.ee/gorkemyagci](https://linktr.ee/gorkemyagci)
