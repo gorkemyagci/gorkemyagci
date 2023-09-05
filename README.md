@@ -1,10 +1,6 @@
 <h1 align="center">Hi 👋, I'm Görkem Yağcı</h1>
 <h3 align="center">Hi, I'm Görkem. I'm improving myself in coding.</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=gorkemyagci&label=Profile%20views&color=0e75b6&style=flat" alt="gorkemyagci" /> </p>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=gorkemyagci" alt="gorkemyagci" /></a> </p>
-
 - 🌱 I’m currently learning **Node.Js**
 
 - 👨‍💻 All of my projects are available at [https://linktr.ee/gorkemyagci](https://linktr.ee/gorkemyagci)
