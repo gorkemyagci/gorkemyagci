@@ -6,8 +6,6 @@
 
 - 🌱 I’m currently learning **Node.Js**
 
-- 👨‍💻 All of my projects are available at [https://linktr.ee/gorkemyagci](https://linktr.ee/gorkemyagci)
-
 - 📫 How to reach me **gorkemyagci705@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
