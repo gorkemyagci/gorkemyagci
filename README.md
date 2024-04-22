@@ -4,8 +4,6 @@
 
 - 🔭 I’m currently working on **Next.Js**
 
-- 🌱 I’m currently learning **Node.Js**
-
 - 📫 How to reach me **gorkemyagci705@gmail.com**
 
 - <p>👨🏻‍💻 Visit my website: <a href="https://gorkemyagci.com">gorkemyagci.com</a></p>
