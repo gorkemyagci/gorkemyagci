@@ -6,7 +6,6 @@
 
 - 📫 How to reach me **gorkemyagci705@gmail.com**
 
-- <p>👨🏻‍💻 Visit my website: <a href="https://gorkemyagci.com">gorkemyagci.com</a></p>
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
