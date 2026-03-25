@@ -2,7 +2,7 @@
 <h3 align="center">I'm improving myself in coding.</h3>
 
 
-- 🔭 I’m currently working on **Next.Js**
+- 🔭 I’m currently working on **Privent.ai**
 
 - 📫 How to reach me **gorkemyagci705@gmail.com**
 
