@@ -14,37 +14,12 @@
 - Building products around **GenAI, Agentic Systems, and Enterprise Security**
 - 5+ years in frontend & full-stack development (Next.js, TypeScript)
 
----
-
-### 🛡️ What is Privent.ai?
-
-**Privent.ai** is a real-time security layer for GenAI tools like ChatGPT, Claude, and Gemini.
-
-- 🧩 Chrome Extension intercepts prompts before they are sent  
-- 🔍 Detects sensitive data (API keys, credentials, PII)  
-- ⚠️ Applies policies: allow / warn / block  
-- 📊 Provides admin dashboard for monitoring & risk analysis  
-
-> We don’t store prompt content — only metadata (risk score, category, decision)
-
----
-
-### 🧠 Vision
-
-Building **“Cloudflare for AI”**
-
-- Phase 1 → Protect human usage (browser layer)  
-- Phase 2 → Secure AI agents (LangGraph, n8n, CrewAI)  
-- Phase 3 → Universal AI Firewall  
-
----
-
-### 🧰 Tech Stack
+### Tech Stack
 
 - **Frontend:** Next.js, React, TypeScript, Tailwind
-- **State:** Zustand
-- **Backend:** Node.js, Express
-- **Database:** PostgreSQL, MongoDB
+- **State:** Zustand, Redux
+- **Backend:** Node.js, Nest.js, Express
+- **Database:** PostgreSQL, MongoDB, Supabase, Firebase
 - **Realtime & Infra:** WebSockets, Chrome Extensions
 
 ---
