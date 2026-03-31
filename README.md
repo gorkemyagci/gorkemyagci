@@ -4,7 +4,7 @@
 
 - 🔭 I’m currently working on **privent.ai**
 
-- 📫 How to reach me **gorkemyagci705@gmail.com**
+- 📫 How to reach me **gorkem@privent.ai**
 
 
 <h3 align="left">Connect with me:</h3>
