@@ -2,12 +2,12 @@
 <h3 align="center">Building the security layer for AI systems</h3>
 
 <p align="center">
-  Co-Founder and cto of <strong>Privent.ai</strong> — Real-time AI prompt security & data leak prevention
+  Co-Founder and CTO of <strong>Privent.ai</strong>
 </p>
 
 ---
 
-### 🚀 About Me
+### About Me
 
 - Co-Founder and CTO of **Privent.ai**
 - Focused on **AI Security, LLM Safety & Data Leak Prevention**
