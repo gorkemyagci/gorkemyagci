@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Görkem</h1>
+<h1 align="center">Hi, I'm Gorkem</h1>
 <h3 align="center">Building the security layer for AI systems</h3>
 
 <p align="center">
