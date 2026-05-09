@@ -18,13 +18,6 @@
 ### What I'm Building
 
 At **[Privent.ai](https://privent.ai)** I'm building what we call the **Cloudflare for AI agent infrastructure**. A universal security layer that intercepts prompts, embeddings and tool calls flowing through agentic pipelines, detects sensitive data leakage in real time and gives enterprises the audit trail they need to actually deploy AI in production.
-
-The stack covers a lot of ground:
-- A **6-layer semantic detection pipeline** with regex hard blocks, GLiNER NER, multilingual embedding search via Qdrant and an LLM judge for ambiguous cases
-- A **multi-task DeBERTa classifier** (mDeBERTa-v3-base) shipped to ONNX INT8, running on the edge for sub-100ms decisions
-- An **SDK and n8n community node** that drops into LangGraph, CrewAI and n8n flows with zero pipeline changes
-- A **browser extension wedge** that already protects prompts going to ChatGPT, Claude and Gemini
-
 ---
 
 ### 👨‍💻 Beyond Privent
