@@ -34,7 +34,7 @@
 
 </div>
 
-## 🛡️ &nbsp; What I'm Building
+## What I'm Building
 
 At **[Privent.ai](https://privent.ai)** I'm building what we call the **Cloudflare for AI agent infrastructure**.
 
@@ -42,7 +42,7 @@ A universal security layer that intercepts prompts, embeddings and tool calls fl
 
 <br />
 
-## 👨‍💻 &nbsp; Beyond Privent
+## Beyond Privent
 
 5+ years building products end to end. Frontend-heavy by background but I ship across the full stack and increasingly across ML infrastructure too.
 
@@ -50,7 +50,7 @@ Independently launched several SaaS products including **Navoo AI**, **BrifAI** 
 
 <br />
 
-## 🛠️ &nbsp; Tech Stack
+## Tech Stack
 
 #### &nbsp;&nbsp;Frontend
 <p>
@@ -93,7 +93,7 @@ Independently launched several SaaS products including **Navoo AI**, **BrifAI** 
 
 <br />
 
-## 📊 &nbsp; GitHub Stats
+## GitHub Stats
 
 <div align="center">
 
