@@ -93,21 +93,6 @@ Independently launched several SaaS products including **Navoo AI**, **BrifAI** 
 
 <br />
 
-## GitHub Stats
-
-<div align="center">
-
-<a href="https://github.com/gorkemyagci">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=gorkemyagci&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&bg_color=0D1117&title_color=70A5FD&icon_color=BF91F3&text_color=38BDAE" />
-</a>
-<a href="https://github.com/gorkemyagci">
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gorkemyagci&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=70A5FD&text_color=38BDAE" />
-</a>
-
-</div>
-
-<br />
-
 <div align="center">
 
 ###### Building the future of secure AI systems
