@@ -21,10 +21,6 @@
     <img src="https://img.shields.io/badge/Stack_Overflow-F58025?style=for-the-badge&logo=stackoverflow&logoColor=white" alt="Stack Overflow" />
   </a>
   &nbsp;
-  <a href="https://www.hackerrank.com/gorkemyagci705">
-    <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" alt="HackerRank" />
-  </a>
-  &nbsp;
   <a href="mailto:gorkem@privent.ai">
     <img src="https://img.shields.io/badge/gorkem@privent.ai-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
