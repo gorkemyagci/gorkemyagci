@@ -8,7 +8,7 @@ GitHub profile repo (`gorkemyagci/gorkemyagci`); `README.md` renders on the prof
 - SVGs loaded through `<img>` cannot fetch anything: no external hrefs, no web fonts (system sans stack only, `lib/svg.py:SANS_STACK`).
 - Vertical spacing: `<br />` only. Section titles use `<h3>` (h1/h2 draw an underline rule).
 - Order in README: heatmap (`./contributions.sh`) first, then the card (`whoami`).
-- Text width is estimated per glyph (`lib/svg.py:text_width`) for wrapping and tag sizing, since SVGs in `<img>` can't measure text.
+- Text width is estimated per glyph (`lib/svg.py:text_width`) for wrapping, since SVGs in `<img>` can't measure text.
 - Dark/light: every image ships two SVGs, embedded with `<picture>` + `<source media="(prefers-color-scheme: dark)">` (dark) and a fallback `<img>` (light). Both are 860 wide.
 - **Animations play once and freeze** (`fill="freeze"` / `animation-fill-mode: forwards`). No infinite loops.
 
@@ -31,8 +31,8 @@ scripts/
 - Files and folders: kebab-case. Importable Python modules: single-word lowercase (`lib/svg.py`, not `svg-utils.py`).
 - Entry scripts are run from the repo root as `python scripts/<name>.py`; each inserts its own directory on `sys.path` and imports `from lib import ...`.
 - All SVG boilerplate goes through `lib/svg.py`; all colors through `lib/theme.py`. Root `<svg>` always carries explicit `width`/`height`.
-- Personal card content lives only in `config/profile.json`; never hardcode it in scripts. Card layout: left column = headline, organization, summary, then `facts` (label + value); right column = `stack` groups rendered as outlined tags. Columns are balanced by spreading the stack groups.
-- Card style is deliberately restrained: theme `fg`/`muted`/`border`/`surface` only, small uppercase labels, no accent colors, no decorative elements. No ASCII art in the repo.
+- Personal card content lives only in `config/profile.json`; never hardcode it in scripts. Card layout: left column = headline, organization, summary, then `facts` (label + value); right column = `stack` groups as a small label over plain-text items joined with ` · `. Columns are balanced by spreading the stack groups.
+- Card style is deliberately restrained: theme `fg`/`muted`/`border` only, small uppercase labels, no accent colors, no decorative elements. No ASCII art in the repo.
 - Each script prints one summary line; errors go to stderr with a non-zero exit.
 
 ## Heatmap

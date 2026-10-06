@@ -9,7 +9,6 @@ from dataclasses import dataclass
 class Theme:
     name: str
     bg: str
-    surface: str
     fg: str
     muted: str
     border: str
@@ -19,7 +18,6 @@ class Theme:
 DARK = Theme(
     name="dark",
     bg="#0d1117",
-    surface="#161b22",
     fg="#c9d1d9",
     muted="#8b949e",
     border="#30363d",
@@ -29,7 +27,6 @@ DARK = Theme(
 LIGHT = Theme(
     name="light",
     bg="#ffffff",
-    surface="#f6f8fa",
     fg="#1f2328",
     muted="#656d76",
     border="#d0d7de",

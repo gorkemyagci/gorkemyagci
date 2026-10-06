@@ -25,12 +25,10 @@ BODY_SIZE = 13
 LABEL_SIZE = 10.5
 BODY_LINE_H = 19
 
-CHIP_SIZE = 12
-CHIP_H = 24
-CHIP_PAD_X = 10
-CHIP_GAP = 6
+STACK_SIZE = 14
+STACK_LINE_H = 22
+STACK_SEP = " · "
 GROUP_GAP = 18
-LABEL_GAP = 9
 STAGGER_S = 0.06
 OUTPUTS = ((DARK, "info-card.svg"), (LIGHT, "info-card-light.svg"))
 
@@ -51,22 +49,16 @@ def wrap(text: str, max_w: float, size: float) -> list[str]:
     return lines or [""]
 
 
-def chip_width(item: str) -> float:
-    return svg.text_width(item, CHIP_SIZE) + 2 * CHIP_PAD_X
-
-
-def flow(items: tuple[str, ...], max_w: float) -> list[list[tuple[float, str]]]:
-    """Lay chips left to right, wrapping to a new row when max_w is exceeded."""
-    rows: list[list[tuple[float, str]]] = [[]]
-    x = 0.0
+def join_items(items: tuple[str, ...], max_w: float, size: float) -> list[str]:
+    """Join items with STACK_SEP, breaking lines only between items."""
+    lines: list[str] = []
     for item in items:
-        w = chip_width(item)
-        if rows[-1] and x + w > max_w:
-            rows.append([])
-            x = 0.0
-        rows[-1].append((x, item))
-        x += w + CHIP_GAP
-    return rows
+        candidate = f"{lines[-1]}{STACK_SEP}{item}" if lines else item
+        if lines and svg.text_width(candidate, size) <= max_w:
+            lines[-1] = candidate
+        else:
+            lines.append(item)
+    return lines
 
 
 def text(x: float, y: float, s: str, fill: str, size: float, extra: str = "") -> str:
@@ -106,7 +98,7 @@ def left_column(card: Card, theme: Theme) -> tuple[list[str], float]:
 
 
 def right_column(card: Card, theme: Theme, gap: float = GROUP_GAP) -> tuple[list[str], float]:
-    """Stack groups as outlined chips. Returns (groups, bottom y)."""
+    """Stack groups as a label over plain-text items. Returns (groups, bottom y)."""
     groups = []
     y = PAD
     for i, group in enumerate(card.stack):
@@ -114,25 +106,9 @@ def right_column(card: Card, theme: Theme, gap: float = GROUP_GAP) -> tuple[list
             y += gap
         y += LABEL_SIZE
         parts = [label(RIGHT_X, y, group.key, theme)]
-        y += LABEL_GAP
-        for row in flow(group.items, RIGHT_W):
-            for x, item in row:
-                w = chip_width(item)
-                cx = RIGHT_X + x
-                parts.append(
-                    f'<rect x="{svg.fmt(cx + 0.5)}" y="{svg.fmt(y + 0.5)}" width="{svg.fmt(w - 1)}" '
-                    f'height="{CHIP_H - 1}" rx="6" fill="{theme.surface}" stroke="{theme.border}"/>'
-                    + text(
-                        cx + w / 2,
-                        y + CHIP_H / 2 + CHIP_SIZE * 0.35,
-                        item,
-                        theme.fg,
-                        CHIP_SIZE,
-                        ' text-anchor="middle"',
-                    )
-                )
-            y += CHIP_H + CHIP_GAP
-        y -= CHIP_GAP
+        for line in join_items(group.items, RIGHT_W, STACK_SIZE):
+            y += STACK_LINE_H
+            parts.append(text(RIGHT_X, y, line, theme.fg, STACK_SIZE))
         groups.append("".join(parts))
     return groups, y
 
