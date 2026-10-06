@@ -1,22 +1,5 @@
 {
   "username": "gorkemyagci",
-  "title": "gorkem@github",
-  "card": {
-    "headline": "Co-Founder & CTO",
-    "organization": "Privent.ai",
-    "summary": "Security layer for agentic AI pipelines",
-    "facts": [
-      {"key": "Base", "value": "İzmir, TR"},
-      {"key": "Experience", "value": "5+ years shipping products end to end"},
-      {"key": "Contact", "value": "gorkem@privent.ai"}
-    ],
-    "stack": [
-      {"key": "Frontend", "items": ["Next.js", "React", "TypeScript", "Tailwind", "Zustand", "Redux"]},
-      {"key": "Backend", "items": ["Node.js", "NestJS", "Express", "Python"]},
-      {"key": "Data / Infra", "items": ["PostgreSQL", "MongoDB", "Supabase", "Qdrant", "Cloudflare"]},
-      {"key": "ML / AI", "items": ["ONNX", "Transformers", "Ollama", "PyTorch"]}
-    ]
-  },
   "heatmap": {
     "footer_stats": ["total", "longest_streak"]
   }

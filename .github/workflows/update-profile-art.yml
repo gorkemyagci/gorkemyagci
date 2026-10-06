@@ -39,10 +39,7 @@ jobs:
       - name: Render heatmap
         run: python scripts/render-heatmap-svg.py
 
-      - name: Render info card
-        run: python scripts/make-info-card.py
-
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: data/contributions.json assets/contrib-heatmap*.svg assets/info-card*.svg
+          file_pattern: data/contributions.json assets/contrib-heatmap*.svg

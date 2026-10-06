@@ -28,22 +28,6 @@
 
 <br />
 
-<h3><code>gorkem@github ~ $ ./contributions.sh</code></h3>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/contrib-heatmap.svg" />
-  <img src="assets/contrib-heatmap-light.svg" width="860" alt="GitHub contribution heatmap for the last year" />
-</picture>
-
-<br />
-
-<h3><code>gorkem@github ~ $ whoami</code></h3>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/info-card.svg" />
-  <img src="assets/info-card-light.svg" width="860" alt="Co-Founder &amp; CTO @ Privent.ai, stack and contact" />
-</picture>
-
 </div>
 
 ## What I'm Building
@@ -63,6 +47,16 @@ Independently launched several SaaS products including **Navoo AI**, **BrifAI** 
 <br />
 
 <div align="center">
+
+<h3><code>gorkem@github ~ $ ./contributions.sh</code></h3>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/contrib-heatmap.svg" />
+  <img src="assets/contrib-heatmap-light.svg" width="860" alt="GitHub contribution heatmap for the last year" />
+</picture>
+
+<br />
+<br />
 
 ###### Building the future of secure AI systems
 
