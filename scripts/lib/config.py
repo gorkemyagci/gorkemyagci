@@ -15,14 +15,24 @@ def repo_path(*parts: str) -> Path:
 
 
 @dataclass(frozen=True)
-class Row:
+class Fact:
     key: str
     value: str
 
 
 @dataclass(frozen=True)
-class Separator:
-    pass
+class StackGroup:
+    key: str
+    items: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class Card:
+    headline: str
+    organization: str
+    summary: str
+    facts: tuple[Fact, ...]
+    stack: tuple[StackGroup, ...]
 
 
 FOOTER_STATS = ("total", "current_streak", "longest_streak", "best_day")
@@ -38,17 +48,18 @@ class Heatmap:
 class Profile:
     username: str
     title: str
-    rows: list[Row | Separator]
+    card: Card
     heatmap: Heatmap = Heatmap()
 
 
-def _parse_row(raw: dict, index: int) -> Row | Separator:
-    if raw.get("separator"):
-        return Separator()
-    try:
-        return Row(key=str(raw["key"]), value=str(raw["value"]))
-    except KeyError as exc:
-        raise SystemExit(f"{PROFILE_PATH}: rows[{index}] missing {exc}") from None
+def _parse_card(raw: dict) -> Card:
+    return Card(
+        headline=str(raw["headline"]),
+        organization=str(raw["organization"]),
+        summary=str(raw["summary"]),
+        facts=tuple(Fact(key=str(f["key"]), value=str(f["value"])) for f in raw["facts"]),
+        stack=tuple(StackGroup(key=str(g["key"]), items=tuple(map(str, g["items"]))) for g in raw["stack"]),
+    )
 
 
 def _parse_heatmap(raw: dict) -> Heatmap:
@@ -70,8 +81,8 @@ def load_profile(path: Path = PROFILE_PATH) -> Profile:
         return Profile(
             username=data["username"],
             title=data["title"],
-            rows=[_parse_row(r, i) for i, r in enumerate(data["rows"])],
+            card=_parse_card(data["card"]),
             heatmap=_parse_heatmap(data.get("heatmap", {})),
         )
     except KeyError as exc:
-        raise SystemExit(f"{path}: missing top-level key {exc}") from None
+        raise SystemExit(f"{path}: missing key {exc}") from None

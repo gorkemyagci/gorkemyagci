@@ -4,53 +4,44 @@ from __future__ import annotations
 
 import argparse
 import sys
-from dataclasses import dataclass
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
 from lib import config, svg
-from lib.config import Profile, Row
+from lib.config import Card
 from lib.theme import DARK, LIGHT, Theme
 
 WIDTH = 860
-PAD_X = 32
-PAD_Y = 22
-LABEL_W = 148
-LABEL_SIZE = 11
-VALUE_SIZE = 14
-ROW_H = 30
-SEP_H = 25
-STAGGER_S = 0.05
+PAD = 32
+LEFT_W = 252
+DIVIDER_X = PAD + LEFT_W + 28
+RIGHT_X = DIVIDER_X + 28
+RIGHT_W = WIDTH - PAD - RIGHT_X
+
+HEADLINE_SIZE = 22
+ORG_SIZE = 15
+BODY_SIZE = 13
+LABEL_SIZE = 10.5
+BODY_LINE_H = 19
+
+CHIP_SIZE = 12
+CHIP_H = 24
+CHIP_PAD_X = 10
+CHIP_GAP = 6
+GROUP_GAP = 18
+LABEL_GAP = 9
+STAGGER_S = 0.06
 OUTPUTS = ((DARK, "info-card.svg"), (LIGHT, "info-card-light.svg"))
 
 
-@dataclass(frozen=True)
-class Line:
-    """One rendered line: a row (label empty on wrapped continuations) or a separator."""
-
-    kind: str  # "row" | "sep"
-    label: str = ""
-    value: str = ""
-
-    @property
-    def height(self) -> int:
-        return SEP_H if self.kind == "sep" else ROW_H
-
-
-def wrap(text: str, max_chars: int) -> list[str]:
-    """Greedy word wrap; tokens longer than max_chars are hard-broken."""
+def wrap(text: str, max_w: float, size: float) -> list[str]:
+    """Greedy word wrap by estimated pixel width; deterministic for a given input."""
     lines: list[str] = []
     current = ""
     for word in text.split():
-        while len(word) > max_chars:
-            if current:
-                lines.append(current)
-                current = ""
-            lines.append(word[:max_chars])
-            word = word[max_chars:]
         candidate = f"{current} {word}" if current else word
-        if len(candidate) <= max_chars:
+        if not current or svg.text_width(candidate, size) <= max_w:
             current = candidate
         else:
             lines.append(current)
@@ -60,59 +51,121 @@ def wrap(text: str, max_chars: int) -> list[str]:
     return lines or [""]
 
 
-def layout(profile: Profile) -> list[Line]:
-    max_chars = int((WIDTH - 2 * PAD_X - LABEL_W) / (VALUE_SIZE * svg.SANS_CHAR_RATIO))
-    lines: list[Line] = []
-    for entry in profile.rows:
-        if not isinstance(entry, Row):
-            lines.append(Line("sep"))
-            continue
-        for j, chunk in enumerate(wrap(entry.value, max_chars)):
-            lines.append(Line("row", label=entry.key.upper() if j == 0 else "", value=chunk))
-    return lines
+def chip_width(item: str) -> float:
+    return svg.text_width(item, CHIP_SIZE) + 2 * CHIP_PAD_X
 
 
-def render_line(line: Line, top: float, theme: Theme) -> str:
-    if line.kind == "sep":
-        mid = top + SEP_H / 2
-        return (
-            f'<line x1="{PAD_X}" y1="{svg.fmt(mid)}" x2="{WIDTH - PAD_X}" y2="{svg.fmt(mid)}" '
-            f'stroke="{theme.border}"/>'
-        )
-    baseline = top + ROW_H / 2 + VALUE_SIZE * 0.35
-    parts = []
-    if line.label:
-        parts.append(
-            f'<text x="{PAD_X}" y="{svg.fmt(baseline)}" fill="{theme.muted}" font-size="{LABEL_SIZE}" '
-            f'font-weight="600" letter-spacing="0.08em">{svg.esc(line.label)}</text>'
-        )
-    parts.append(
-        f'<text x="{PAD_X + LABEL_W}" y="{svg.fmt(baseline)}" fill="{theme.fg}" '
-        f'font-size="{VALUE_SIZE}">{svg.esc(line.value)}</text>'
+def flow(items: tuple[str, ...], max_w: float) -> list[list[tuple[float, str]]]:
+    """Lay chips left to right, wrapping to a new row when max_w is exceeded."""
+    rows: list[list[tuple[float, str]]] = [[]]
+    x = 0.0
+    for item in items:
+        w = chip_width(item)
+        if rows[-1] and x + w > max_w:
+            rows.append([])
+            x = 0.0
+        rows[-1].append((x, item))
+        x += w + CHIP_GAP
+    return rows
+
+
+def text(x: float, y: float, s: str, fill: str, size: float, extra: str = "") -> str:
+    return (
+        f'<text x="{svg.fmt(x)}" y="{svg.fmt(y)}" fill="{fill}" font-size="{svg.fmt(size)}"{extra}>'
+        f"{svg.esc(s)}</text>"
     )
-    return "".join(parts)
 
 
-def render(profile: Profile, theme: Theme) -> str:
-    lines = layout(profile)
-    height = 2 * PAD_Y + sum(l.height for l in lines)
+def label(x: float, y: float, s: str, theme: Theme) -> str:
+    return text(x, y, s.upper(), theme.muted, LABEL_SIZE, ' font-weight="600" letter-spacing="0.09em"')
+
+
+def left_column(card: Card, theme: Theme) -> tuple[list[str], float]:
+    """Identity block + facts. Returns (groups, bottom y)."""
+    groups = []
+    y = PAD + HEADLINE_SIZE
+    groups.append(text(PAD, y, card.headline, theme.fg, HEADLINE_SIZE, ' font-weight="600"'))
+    y += 26
+    groups.append(text(PAD, y, card.organization, theme.fg, ORG_SIZE))
+    y += 8
+    summary = []
+    for line in wrap(card.summary, LEFT_W, BODY_SIZE):
+        y += BODY_LINE_H
+        summary.append(text(PAD, y, line, theme.muted, BODY_SIZE))
+    groups.append("".join(summary))
+
+    y += 14
+    for fact in card.facts:
+        y += 24
+        parts = [label(PAD, y, fact.key, theme)]
+        for line in wrap(fact.value, LEFT_W, BODY_SIZE):
+            y += BODY_LINE_H
+            parts.append(text(PAD, y, line, theme.fg, BODY_SIZE))
+        groups.append("".join(parts))
+    return groups, y
+
+
+def right_column(card: Card, theme: Theme, gap: float = GROUP_GAP) -> tuple[list[str], float]:
+    """Stack groups as outlined chips. Returns (groups, bottom y)."""
+    groups = []
+    y = PAD
+    for i, group in enumerate(card.stack):
+        if i:
+            y += gap
+        y += LABEL_SIZE
+        parts = [label(RIGHT_X, y, group.key, theme)]
+        y += LABEL_GAP
+        for row in flow(group.items, RIGHT_W):
+            for x, item in row:
+                w = chip_width(item)
+                cx = RIGHT_X + x
+                parts.append(
+                    f'<rect x="{svg.fmt(cx + 0.5)}" y="{svg.fmt(y + 0.5)}" width="{svg.fmt(w - 1)}" '
+                    f'height="{CHIP_H - 1}" rx="6" fill="{theme.surface}" stroke="{theme.border}"/>'
+                    + text(
+                        cx + w / 2,
+                        y + CHIP_H / 2 + CHIP_SIZE * 0.35,
+                        item,
+                        theme.fg,
+                        CHIP_SIZE,
+                        ' text-anchor="middle"',
+                    )
+                )
+            y += CHIP_H + CHIP_GAP
+        y -= CHIP_GAP
+        groups.append("".join(parts))
+    return groups, y
+
+
+def render(profile: config.Profile, theme: Theme) -> str:
+    left, left_bottom = left_column(profile.card, theme)
+    right, right_bottom = right_column(profile.card, theme)
+    target = left_bottom + 6
+    if right_bottom < target and len(profile.card.stack) > 1:
+        # Spread stack groups so both columns end on the same line.
+        gap = GROUP_GAP + (target - right_bottom) / (len(profile.card.stack) - 1)
+        right, right_bottom = right_column(profile.card, theme, gap)
+    height = round(max(target, right_bottom) + PAD)
+
     body = [
         f'<rect x="0.5" y="0.5" width="{WIDTH - 1}" height="{height - 1}" rx="6" '
         f'fill="{theme.bg}" stroke="{theme.border}"/>',
+        f'<line x1="{DIVIDER_X}" y1="{PAD}" x2="{DIVIDER_X}" y2="{height - PAD}" stroke="{theme.border}"/>',
         f'<g font-family="{svg.SANS_STACK}">',
     ]
-    top = PAD_Y
-    for n, line in enumerate(lines):
-        body.append(f'<g class="r r{n}">{render_line(line, top, theme)}</g>')
-        top += line.height
+    # Left column reveals first, then the stack groups.
+    for n, group in enumerate(left + right):
+        body.append(f'<g class="r r{n}">{group}</g>')
     body.append("</g>")
 
+    count = len(left) + len(right)
     style = (
         ".r{opacity:0;animation:in .5s ease-out forwards}"
         "@keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}"
-        + "".join(f".r{n}{{animation-delay:{n * STAGGER_S:.2f}s}}" for n in range(1, len(lines)))
+        + "".join(f".r{n}{{animation-delay:{n * STAGGER_S:.2f}s}}" for n in range(1, count))
     )
-    return svg.svg_root(WIDTH, height, "\n".join(body), style=style, title=profile.title)
+    title = f"{profile.card.headline}, {profile.card.organization}"
+    return svg.svg_root(WIDTH, height, "\n".join(body), style=style, title=title)
 
 
 def main() -> int:

@@ -11,6 +11,28 @@ SANS_STACK = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvet
 # Upper-bound estimate of average sans glyph advance relative to font-size.
 SANS_CHAR_RATIO = 0.56
 
+# Approximate Helvetica/SF advance widths (em) for per-string measurement.
+_NARROW = set("iljI.,:;'!|")
+_SEMI = set("ftr()[]- /")
+_WIDE = set("mwMW@")
+
+
+def _advance(ch: str) -> float:
+    if ch in _NARROW:
+        return 0.26
+    if ch in _SEMI:
+        return 0.34
+    if ch in _WIDE:
+        return 0.86
+    if ch.isupper():
+        return 0.68
+    return 0.55
+
+
+def text_width(text: str, size: float) -> float:
+    """Estimated rendered width of sans text; slightly generous so content never overflows."""
+    return sum(_advance(c) for c in text) * size
+
 
 def esc(text: str) -> str:
     return escape(text, {'"': "&quot;"})
