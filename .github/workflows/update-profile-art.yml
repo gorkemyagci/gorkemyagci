@@ -1,0 +1,48 @@
+name: update profile art
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "config/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-art
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch contributions
+        run: python scripts/fetch-contributions.py
+
+      - name: Render heatmap
+        run: python scripts/render-heatmap-svg.py
+
+      - name: Render info card
+        run: python scripts/make-info-card.py
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh contribution graph [skip ci]"
+          file_pattern: data/contributions.json assets/contrib-heatmap*.svg assets/info-card*.svg

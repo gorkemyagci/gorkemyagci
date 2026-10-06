@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="364" viewBox="0 0 860 364" role="img">
+<title>gorkem@github</title>
+<style>.r{opacity:0;animation:in .5s ease-out forwards}@keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.r1{animation-delay:0.05s}.r2{animation-delay:0.10s}.r3{animation-delay:0.15s}.r4{animation-delay:0.20s}.r5{animation-delay:0.25s}.r6{animation-delay:0.30s}.r7{animation-delay:0.35s}.r8{animation-delay:0.40s}.r9{animation-delay:0.45s}.r10{animation-delay:0.50s}</style>
+<rect x="0.5" y="0.5" width="859" height="363" rx="6" fill="#0d1117" stroke="#30363d"/>
+<g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif">
+<g class="r r0"><text x="32" y="41.9" fill="#8b949e" font-size="11" font-weight="600" letter-spacing="0.08em">NOW</text><text x="180" y="41.9" fill="#c9d1d9" font-size="14">Co-Founder &amp; CTO @ Privent.ai</text></g>
+<g class="r r1"><text x="32" y="71.9" fill="#8b949e" font-size="11" font-weight="600" letter-spacing="0.08em">MISSION</text><text x="180" y="71.9" fill="#c9d1d9" font-size="14">Security layer for agentic AI pipelines</text></g>
+<g class="r r2"><line x1="32" y1="94.5" x2="828" y2="94.5" stroke="#30363d"/></g>
+<g class="r r3"><text x="32" y="126.9" fill="#8b949e" font-size="11" font-weight="600" letter-spacing="0.08em">FRONTEND</text><text x="180" y="126.9" fill="#c9d1d9" font-size="14">Next.js · React · TypeScript · Tailwind · Zustand · Redux</text></g>
+<g class="r r4"><text x="32" y="156.9" fill="#8b949e" font-size="11" font-weight="600" letter-spacing="0.08em">BACKEND</text><text x="180" y="156.9" fill="#c9d1d9" font-size="14">Node.js · NestJS · Express · Python</text></g>
+<g class="r r5"><text x="32" y="186.9" fill="#8b949e" font-size="11" font-weight="600" letter-spacing="0.08em">DATA/INFRA</text><text x="180" y="186.9" fill="#c9d1d9" font-size="14">PostgreSQL · MongoDB · Supabase · Qdrant · Cloudflare</text></g>
+<g class="r r6"><text x="32" y="216.9" fill="#8b949e" font-size="11" font-weight="600" letter-spacing="0.08em">ML/AI</text><text x="180" y="216.9" fill="#c9d1d9" font-size="14">ONNX · Transformers · Ollama · PyTorch</text></g>
+<g class="r r7"><line x1="32" y1="239.5" x2="828" y2="239.5" stroke="#30363d"/></g>
+<g class="r r8"><text x="32" y="271.9" fill="#8b949e" font-size="11" font-weight="600" letter-spacing="0.08em">BASE</text><text x="180" y="271.9" fill="#c9d1d9" font-size="14">İzmir, TR</text></g>
+<g class="r r9"><text x="32" y="301.9" fill="#8b949e" font-size="11" font-weight="600" letter-spacing="0.08em">EXP</text><text x="180" y="301.9" fill="#c9d1d9" font-size="14">5+ years shipping products end to end</text></g>
+<g class="r r10"><text x="32" y="331.9" fill="#8b949e" font-size="11" font-weight="600" letter-spacing="0.08em">CONTACT</text><text x="180" y="331.9" fill="#c9d1d9" font-size="14">gorkem@privent.ai</text></g>
+</g>
+</svg>

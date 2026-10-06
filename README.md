@@ -13,7 +13,7 @@
 <br />
 
 <p>
-  <a href="https://linkedin.com/in/görkem-yağcı-9487b9229">
+  <a href="https://linkedin.com/in/devgorkemyagci">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   &nbsp;
@@ -27,6 +27,22 @@
 </p>
 
 <br />
+
+<h3><code>gorkem@github ~ $ whoami</code></h3>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/info-card.svg" />
+  <img src="assets/info-card-light.svg" width="860" alt="Co-Founder &amp; CTO @ Privent.ai, stack and contact" />
+</picture>
+
+<br />
+
+<h3><code>gorkem@github ~ $ ./contributions.sh</code></h3>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/contrib-heatmap.svg" />
+  <img src="assets/contrib-heatmap-light.svg" width="860" alt="GitHub contribution heatmap for the last year" />
+</picture>
 
 </div>
 
@@ -43,49 +59,6 @@ A universal security layer that intercepts prompts, embeddings and tool calls fl
 5+ years building products end to end. Frontend-heavy by background but I ship across the full stack and increasingly across ML infrastructure too.
 
 Independently launched several SaaS products including **Navoo AI**, **BrifAI** and **Seonly**, which keeps me close to the realities of building, not just architecting.
-
-<br />
-
-## Tech Stack
-
-#### &nbsp;&nbsp;Frontend
-<p>
-&nbsp;&nbsp;
-<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
-<img src="https://img.shields.io/badge/Zustand-2D3748?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" />
-</p>
-
-#### &nbsp;&nbsp;Backend
-<p>
-&nbsp;&nbsp;
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-<img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" />
-<img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" />
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-</p>
-
-#### &nbsp;&nbsp;Data & Infra
-<p>
-&nbsp;&nbsp;
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
-<img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
-<img src="https://img.shields.io/badge/Qdrant-DC382D?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" />
-</p>
-
-#### &nbsp;&nbsp;ML & AI
-<p>
-&nbsp;&nbsp;
-<img src="https://img.shields.io/badge/ONNX-005CED?style=for-the-badge&logo=onnx&logoColor=white" />
-<img src="https://img.shields.io/badge/🤗_Transformers-FFD21E?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white" />
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-</p>
 
 <br />
 
