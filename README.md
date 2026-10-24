@@ -32,10 +32,9 @@ I build products from the database to the interface with Next.js, NestJS and Typ
 
 <h3>Selected work</h3>
 
-- **[Navoo AI](https://navooai.com)**: RAG-powered in-app assistant that crawls a site and routes each user question to the right page.
-- **Daros**: AI voice call center that answers calls 24/7, pulls answers from a knowledge base and books appointments.
-- **[streaming-ui-lab](https://github.com/gorkemyagci/streaming-ui-lab)**: open-source experiments on rendering streamed LLM output without freezing the page.
 - **[Privent](https://privent.ai)**: security layer for agentic AI and an official n8n partner node.
+- **[Daros](https://www.upwork.com/freelancers/~01c4115581981e8ea0?p=1994478274690179072)**: AI voice call center that answers calls 24/7, pulls answers from a knowledge base and books appointments.
+- **[Navoo AI](https://navooai.com)**: RAG-powered in-app assistant that crawls a site and routes each user question to the right page.
 
 <br />
 
