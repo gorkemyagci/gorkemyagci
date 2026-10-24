@@ -10,8 +10,7 @@
     {
       "id": "site",
       "label": "gorkemyagci.com",
-      "icon": "globe",
-      "primary": true
+      "icon": "globe"
     },
     {
       "id": "linkedin",
