@@ -1,6 +1,27 @@
 {
   "username": "gorkemyagci",
   "heatmap": {
-    "footer_stats": ["total", "longest_streak"]
-  }
+    "footer_stats": [
+      "total",
+      "longest_streak"
+    ]
+  },
+  "links": [
+    {
+      "id": "site",
+      "label": "gorkemyagci.com",
+      "icon": "globe",
+      "primary": true
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "icon": "linkedin"
+    },
+    {
+      "id": "email",
+      "label": "hi@gorkemyagci.com",
+      "icon": "mail"
+    }
+  ]
 }

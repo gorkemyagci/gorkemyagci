@@ -9,17 +9,11 @@
 <br />
 
 <p>
-  <a href="https://gorkemyagci.com">
-    <img src="https://img.shields.io/badge/gorkemyagci.com-1c1c1b?style=for-the-badge&logo=googlechrome&logoColor=white" alt="gorkemyagci.com" />
-  </a>
+  <a href="https://gorkemyagci.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-site.svg" /><img src="assets/link-site-light.svg" alt="gorkemyagci.com" height="36" /></picture></a>
   &nbsp;
-  <a href="https://linkedin.com/in/devgorkemyagci">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
+  <a href="https://linkedin.com/in/devgorkemyagci"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin.svg" /><img src="assets/link-linkedin-light.svg" alt="LinkedIn" height="36" /></picture></a>
   &nbsp;
-  <a href="mailto:hi@gorkemyagci.com">
-    <img src="https://img.shields.io/badge/hi@gorkemyagci.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
+  <a href="mailto:hi@gorkemyagci.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email.svg" /><img src="assets/link-email-light.svg" alt="hi@gorkemyagci.com" height="36" /></picture></a>
 </p>
 
 <br />

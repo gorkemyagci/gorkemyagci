@@ -14,13 +14,14 @@ GitHub profile repo (`gorkemyagci/gorkemyagci`); `README.md` renders on the prof
 ## Structure
 ```
 README.md                     hand-written page; embeds assets/*.svg
-config/profile.json           username + heatmap footer config
+config/profile.json           username, heatmap footer config, contact links
 data/contributions.json       scraped calendar + stats (written by CI)
 assets/                       generated SVGs (commit them)
 scripts/
   requirements.txt            requests, beautifulsoup4 (CI)
   fetch-contributions.py      github.com/users/<u>/contributions -> data/contributions.json
   render-heatmap-svg.py       data/contributions.json -> assets/contrib-heatmap{,-light}.svg
+  render-link-buttons.py      profile.json links -> assets/link-<id>{,-light}.svg
   lib/                        svg.py (root builder, escaping, STATIC flag), theme.py (palettes), config.py (profile + paths)
 .github/workflows/update-profile-art.yml   daily fetch + heatmap
 ```
@@ -30,7 +31,7 @@ scripts/
 - Entry scripts are run from the repo root as `python scripts/<name>.py`; each inserts its own directory on `sys.path` and imports `from lib import ...`.
 - All SVG boilerplate goes through `lib/svg.py`; all colors through `lib/theme.py`. Root `<svg>` always carries explicit `width`/`height`.
 - Config (username, heatmap options) lives only in `config/profile.json`; never hardcode it in scripts.
-- No profile card, no ASCII art, no tech-stack section or badges in the README.
+- No profile card, no ASCII art, no tech-stack section or shields.io badges in the README. Contact buttons are the generated `assets/link-*.svg`.
 - Each script prints one summary line; errors go to stderr with a non-zero exit.
 
 ## Heatmap
@@ -38,7 +39,7 @@ scripts/
 - Brightest shade (`#69f0a0`) = level-4 days whose count is ≥ the 95th percentile of non-zero days. Constant `PEAK_PERCENTILE` in `lib/theme.py`; override per run with `--peak-percentile`.
 
 ## README content
-- Hero (name, title, contact badges), intro, "Selected work", "How I work", "Writing" and footer copy are hand-written in `README.md`. Keep it in line with gorkemyagci.com.
+- Hero (name, title, contact buttons), intro, "Selected work", "How I work", "Writing" and footer copy are hand-written in `README.md`. Keep it in line with gorkemyagci.com.
 
 ## Regenerating assets
 ```
@@ -46,6 +47,7 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -r scripts/requirements.txt
 python scripts/fetch-contributions.py
 python scripts/render-heatmap-svg.py
+python scripts/render-link-buttons.py   # only when links change
 ```
 
 ## Static preview

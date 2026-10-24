@@ -23,10 +23,22 @@ class Heatmap:
     footer_stats: tuple[str, ...] = DEFAULT_FOOTER_STATS
 
 
+LINK_ICONS = ("globe", "linkedin", "mail")
+
+
+@dataclass(frozen=True)
+class Link:
+    id: str
+    label: str
+    icon: str
+    primary: bool = False
+
+
 @dataclass(frozen=True)
 class Profile:
     username: str
     heatmap: Heatmap = Heatmap()
+    links: tuple[Link, ...] = ()
 
 
 def _parse_heatmap(raw: dict) -> Heatmap:
@@ -35,6 +47,16 @@ def _parse_heatmap(raw: dict) -> Heatmap:
     if unknown:
         raise SystemExit(f"{PROFILE_PATH}: heatmap.footer_stats has unknown {unknown}; allowed: {list(FOOTER_STATS)}")
     return Heatmap(footer_stats=stats)
+
+
+def _parse_links(raw: list) -> tuple[Link, ...]:
+    links = []
+    for item in raw:
+        link = Link(id=item["id"], label=item["label"], icon=item["icon"], primary=bool(item.get("primary", False)))
+        if link.icon not in LINK_ICONS:
+            raise SystemExit(f"{PROFILE_PATH}: links[{link.id}].icon must be one of {list(LINK_ICONS)}")
+        links.append(link)
+    return tuple(links)
 
 
 def load_profile(path: Path = PROFILE_PATH) -> Profile:
@@ -48,6 +70,7 @@ def load_profile(path: Path = PROFILE_PATH) -> Profile:
         return Profile(
             username=data["username"],
             heatmap=_parse_heatmap(data.get("heatmap", {})),
+            links=_parse_links(data.get("links", [])),
         )
     except KeyError as exc:
         raise SystemExit(f"{path}: missing key {exc}") from None
