@@ -4,25 +4,21 @@
 
 # Hi, I'm Gorkem
 
-### Co-Founder & CTO at [Privent.ai](https://privent.ai)
-
-<p>
-  <em>Building the security layer for agentic AI pipelines</em>
-</p>
+### Full-stack and AI engineer who ships products end to end.
 
 <br />
 
 <p>
+  <a href="https://gorkemyagci.com">
+    <img src="https://img.shields.io/badge/gorkemyagci.com-1c1c1b?style=for-the-badge&logo=googlechrome&logoColor=white" alt="gorkemyagci.com" />
+  </a>
+  &nbsp;
   <a href="https://linkedin.com/in/devgorkemyagci">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   &nbsp;
-  <a href="https://stackoverflow.com/users/16569376">
-    <img src="https://img.shields.io/badge/Stack_Overflow-F58025?style=for-the-badge&logo=stackoverflow&logoColor=white" alt="Stack Overflow" />
-  </a>
-  &nbsp;
-  <a href="mailto:gorkem@privent.ai">
-    <img src="https://img.shields.io/badge/gorkem@privent.ai-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  <a href="mailto:hi@gorkemyagci.com">
+    <img src="https://img.shields.io/badge/hi@gorkemyagci.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 </p>
 
@@ -30,19 +26,30 @@
 
 </div>
 
-## What I'm Building
-
-At **[Privent.ai](https://privent.ai)** I'm building what we call the **Cloudflare for AI agent infrastructure**.
-
-A universal security layer that intercepts prompts, embeddings and tool calls flowing through agentic pipelines, detects sensitive data leakage in real time and gives enterprises the audit trail they need to actually deploy AI in production.
+I build products from the database to the interface with Next.js, NestJS and TypeScript, and put AI into them where it does real work: RAG, MCP and tool calling. Looking for my next team to build with.
 
 <br />
 
-## Beyond Privent
+<h3>Selected work</h3>
 
-5+ years building products end to end. Frontend-heavy by background but I ship across the full stack and increasingly across ML infrastructure too.
+- **[Navoo AI](https://navooai.com)**: RAG-powered in-app assistant that crawls a site and routes each user question to the right page.
+- **Daros**: AI voice call center that answers calls 24/7, pulls answers from a knowledge base and books appointments.
+- **[streaming-ui-lab](https://github.com/gorkemyagci/streaming-ui-lab)**: open-source experiments on rendering streamed LLM output without freezing the page.
+- **[Privent](https://privent.ai)**: security layer for agentic AI and an official n8n partner node.
 
-Independently launched several SaaS products including **Navoo AI**, **BrifAI** and **Seonly**, which keeps me close to the realities of building, not just architecting.
+<br />
+
+<h3>How I work</h3>
+
+I build with Claude Code every day and treat the setup as part of the codebase: rules, skills, hooks and sub-agents per project. Hooks stop destructive or production-touching commands before they run, and I read every diff before it ships.
+
+<br />
+
+<h3>Writing</h3>
+
+- [Rendering a streamed LLM answer without freezing the page](https://gorkemyagci.com/blog/streaming-llm-ui)
+- [YouTube embeds are heavy. A facade fixes that.](https://gorkemyagci.com/blog/lite-youtube-embed)
+- [Trying No-Vary-Search on my own site](https://gorkemyagci.com/blog/no-vary-search)
 
 <br />
 
@@ -58,10 +65,6 @@ Independently launched several SaaS products including **Navoo AI**, **BrifAI** 
 <br />
 <br />
 
-###### Building the future of secure AI systems
-
-Open to conversations about agentic AI security, LLM data leak prevention and founder engineering.
-
-**[gorkem@privent.ai](mailto:gorkem@privent.ai)**
+**[gorkemyagci.com](https://gorkemyagci.com)** · **[hi@gorkemyagci.com](mailto:hi@gorkemyagci.com)**
 
 </div>

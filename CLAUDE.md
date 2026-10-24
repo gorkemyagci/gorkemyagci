@@ -7,7 +7,7 @@ GitHub profile repo (`gorkemyagci/gorkemyagci`); `README.md` renders on the prof
 - GitHub strips `<script>` and nearly all inline CSS/`style` attributes from READMEs. All motion lives **inside** each SVG (SMIL or CSS `@keyframes` in an embedded `<style>`), referenced via `<img>`/`<picture>`.
 - SVGs loaded through `<img>` cannot fetch anything: no external hrefs, no web fonts (system sans stack only, `lib/svg.py:SANS_STACK`).
 - Vertical spacing: `<br />` only. Section titles use `<h3>` (h1/h2 draw an underline rule).
-- Order in README: hero → "What I'm Building" → "Beyond Privent" → heatmap (`./contributions.sh`) → footer.
+- Order in README: hero → intro paragraph → "Selected work" → "How I work" → "Writing" → heatmap (`./contributions.sh`) → footer.
 - Dark/light: the heatmap ships two SVGs, embedded with `<picture>` + `<source media="(prefers-color-scheme: dark)">` (dark) and a fallback `<img>` (light). 860 wide.
 - **Animations play once and freeze** (`fill="freeze"` / `animation-fill-mode: forwards`). No infinite loops.
 
@@ -38,7 +38,7 @@ scripts/
 - Brightest shade (`#69f0a0`) = level-4 days whose count is ≥ the 95th percentile of non-zero days. Constant `PEAK_PERCENTILE` in `lib/theme.py`; override per run with `--peak-percentile`.
 
 ## README content
-- Hero (name, title, tagline, contact badges), "What I'm Building", "Beyond Privent" and footer copy are hand-written in `README.md`.
+- Hero (name, title, contact badges), intro, "Selected work", "How I work", "Writing" and footer copy are hand-written in `README.md`. Keep it in line with gorkemyagci.com.
 
 ## Regenerating assets
 ```
