@@ -1,10 +1,10 @@
 {
   "username": "gorkemyagci",
-  "fetched_on": "2026-11-24",
+  "fetched_on": "2026-11-25",
   "stats": {
-    "total": 6202,
-    "current_streak": 50,
-    "longest_streak": 50,
+    "total": 6216,
+    "current_streak": 51,
+    "longest_streak": 51,
     "best_day": {
       "date": "2026-08-01",
       "count": 548
@@ -22,7 +22,7 @@
       "2026-08": 1700,
       "2026-09": 1038,
       "2026-10": 307,
-      "2026-11": 523
+      "2026-11": 537
     }
   },
   "days": [
@@ -1859,7 +1859,12 @@
     {
       "date": "2026-11-24",
       "level": 1,
-      "count": 24
+      "count": 26
+    },
+    {
+      "date": "2026-11-25",
+      "level": 1,
+      "count": 12
     }
   ]
 }
