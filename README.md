@@ -1,34 +1,15 @@
-<div align="center">
-
-<br />
-
-# Hi, I'm Gorkem
-
-### Co-founder and CTO at [Privent](https://privent.ai)
-
-<br />
-
-<p>
-  <a href="https://gorkemyagci.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-site.svg" /><img src="assets/link-site-light.svg" alt="gorkemyagci.com" height="36" /></picture></a>
-  &nbsp;
-  <a href="https://linkedin.com/in/devgorkemyagci"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin.svg" /><img src="assets/link-linkedin-light.svg" alt="LinkedIn" height="36" /></picture></a>
-  &nbsp;
-  <a href="mailto:hi@gorkemyagci.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email.svg" /><img src="assets/link-email-light.svg" alt="hi@gorkemyagci.com" height="36" /></picture></a>
-</p>
-
-<br />
-
-</div>
-
-We help regulated companies use AI while staying compliant with data regulation. More at [privent.ai](https://privent.ai)
-
-<br />
-
-<div align="center">
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/contrib-heatmap.svg" />
-  <img src="assets/contrib-heatmap-light.svg" width="860" alt="GitHub contribution heatmap for the last year" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg" />
+  <img src="assets/header-light.svg" width="860" alt="Gorkem Yagci. Co-founder & CTO, Privent. We help regulated companies use AI while staying compliant with data regulation." />
 </picture>
 
-</div>
+<a href="https://privent.ai"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-privent-dark.svg" /><img src="assets/btn-privent-light.svg" height="36" alt="privent.ai" /></picture></a>&nbsp;
+<a href="https://linkedin.com/in/devgorkemyagci"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-linkedin-dark.svg" /><img src="assets/btn-linkedin-light.svg" height="36" alt="LinkedIn" /></picture></a>&nbsp;
+<a href="mailto:gorkem@privent.ai"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-email-dark.svg" /><img src="assets/btn-email-light.svg" height="36" alt="gorkem@privent.ai" /></picture></a>
+
+<br />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg" />
+  <img src="assets/heatmap-light.svg" width="860" alt="GitHub contribution heatmap for the last year" />
+</picture>
